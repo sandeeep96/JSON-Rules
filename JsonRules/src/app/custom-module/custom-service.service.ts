@@ -12,8 +12,8 @@ export class CustomServiceService {
     return this.http.get(_url);
   } 
 
-  public getCountryDetail(countryName:string){
-    let _url :string ='https://restcountries.eu/rest/v2/name/'+countryName+'?fullText=true';
+  public getCountryDetail(countryName:any){
+    let _url :string ='https://jsonplaceholder.typicode.com/todos/'+countryName;
     return this.http.get(_url);
     
   }

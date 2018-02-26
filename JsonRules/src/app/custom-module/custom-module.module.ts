@@ -6,13 +6,14 @@ import { FormsModule }   from '@angular/forms';
 
 import { CustomComp1Component } from './custom-comp1/custom-comp1.component';
 import { CustomServiceService } from './custom-service.service';
+import { JsonRulerService } from './jsonRuler.service';
 
 @NgModule({
   imports: [
     CommonModule,BrowserModule, HttpModule, FormsModule
   ],
   declarations: [CustomComp1Component],
-  providers: [CustomServiceService],
+  providers: [CustomServiceService,JsonRulerService],
   //exports:[CustomComp1Component]
 })
 export class CustomModuleModule { }
