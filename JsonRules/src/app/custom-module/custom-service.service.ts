@@ -8,7 +8,7 @@ export class CustomServiceService {
   constructor(private http: Http) { }
 
   public getCountriesNames(){
-    let _url :string ='https://restcountries.eu/rest/v2/all';
+    let _url :string ='https://jsonplaceholder.typicode.com/todos';
     return this.http.get(_url);
   } 
 

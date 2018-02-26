@@ -9,20 +9,21 @@ import { CustomServiceService } from '../custom-service.service';
 })
 export class CustomComp1Component implements OnInit {
 
-  public countriesList: any="";
-  public countryName: string="";
-  public countryObj: any=""; 
+  public countriesList: any = "";
+  public countryName: string = "";
+  public countryObj: any = "";
 
   constructor(private countriesService: CustomServiceService) { }
 
   ngOnInit() {
-    this.countriesService.getCountriesNames().subscribe(res=>this.countriesList=res.json());
+    this.countriesService.getCountriesNames().subscribe(res => { console.log(res.json()); this.countriesList = res.json(); });
     //console.log("1"+this.countriesList);
   }
 
-  public getCountryInfo(){
-    this.countriesService.getCountryDetail(this.countryName).subscribe(res=> this.countryObj=res.json()[0]);
-   // console.log("2"+this.countryObj);
+  public getCountryInfo() {
+    this.countriesService.getCountryDetail(this.countryName).subscribe(res => this.countryObj = res.json()[0]);
+    // console.log("2"+this.countryObj);
   }
-  
+
+
 }
