@@ -1,16 +1,16 @@
 
 <h1>Heading</h1>
 
-<!-- <h2>Here are some links to help you navigate: </h2> -->
+<h2>Select the Task ID to Evaluate</h2>
 
-<ul>
-    
-  <li>
-    <h2><a routerLink="load">Load Mock Data</a></h2>
-  </li>
-  
-</ul>
+<div>Task ID:
+  <select [(ngModel)]="countryName" (click)="getCountryInfo()">
+    <option value=""> select </option>
+    <option *ngFor="let country of countriesList" value="{{country.id}}"> {{country.id}} </option>
+  </select>
 
-<hr>
+  <div *ngIf="countryName">
+    <h3>{{result}}</h3>
 
-<router-outlet></router-outlet>
+  </div>
+</div>

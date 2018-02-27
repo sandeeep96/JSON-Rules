@@ -4,11 +4,10 @@ import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from "@angular/router";
 
 import { AppComponent } from './app.component';
-import { MyServiceService } from './my-service.service';
 
-import { CustomModuleModule } from './custom-module/custom-module.module';
-
-import {routes} from './routes'
+import { CustomServiceService } from './custom-service.service';
+import { JsonRulerService } from './jsonRuler.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,11 +16,10 @@ import {routes} from './routes'
   ],
   imports: [
     BrowserModule, 
-    HttpModule, 
-    CustomModuleModule,
-    RouterModule.forRoot(routes)
+    HttpModule,
+    FormsModule
   ],
-  providers: [MyServiceService],
+  providers: [CustomServiceService,JsonRulerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
